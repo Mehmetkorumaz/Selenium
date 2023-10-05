@@ -26,7 +26,7 @@ public class C02_ extends TestBase {
         driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).click();
 
         // 6. Add to Cart butonuna basin
-        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();;
+        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         // 7. Alisveris sepetine tiklayin
         driver.findElement(By.xpath("//*[@*='shopping_cart_link']")).click();
         // 8. Sectiginiz urunun basarili olarak sepete eklendigini control edin
