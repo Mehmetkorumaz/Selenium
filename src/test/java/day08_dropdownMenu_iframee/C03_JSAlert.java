@@ -20,22 +20,22 @@ public class C03_JSAlert extends TestBase {
     public void jsAlertTesti() {
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         bekle(2);
-        this.driver.findElement(By.xpath("//*[text()='Click for JS Alert']")).click();
+        driver.findElement(By.xpath("//*[text()='Click for JS Alert']")).click();
         bekle(2);
         String expectedYazi = "I am a JS Alert";
-        String actualYazi = this.driver.switchTo().alert().getText();
+        String actualYazi = driver.switchTo().alert().getText();
         Assert.assertEquals(expectedYazi, actualYazi);
-        this.driver.switchTo().alert().accept();
+        driver.switchTo().alert().accept();
         bekle(2);
     }
 
     @Test
     public void cancelTesti() {
-        this.driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         bekle(2);
-        this.driver.findElement(By.xpath("//*[text()='Click for JS Confirm']")).click();
+        driver.findElement(By.xpath("//*[text()='Click for JS Confirm']")).click();
         bekle(2);
-        this.driver.switchTo().alert().dismiss();
+        driver.switchTo().alert().dismiss();
         bekle(2);
         String expectedSonucYazisi = "You clicked: Cancel";
         WebElement sonucYaziElementi = this.driver.findElement(By.xpath("//*[@id='result']"));
@@ -45,10 +45,10 @@ public class C03_JSAlert extends TestBase {
 
     @Test
     public void promptTesti() {
-        this.driver.get("https://the-internet.herokuapp.com/javascript_alerts");
-        this.driver.findElement(By.xpath("//*[text()='Click for JS Prompt']")).click();
-        this.driver.switchTo().alert().sendKeys("Abdullah");
-        this.driver.switchTo().alert().accept();
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        driver.findElement(By.xpath("//*[text()='Click for JS Prompt']")).click();
+        driver.switchTo().alert().sendKeys("Abdullah");
+        driver.switchTo().alert().accept();
         WebElement sonucYaziElementi = this.driver.findElement(By.xpath("//*[@id='result']"));
         String actualSonucYazisi = sonucYaziElementi.getText();
         String expectedIcerik = "Abdullah";
